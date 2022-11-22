@@ -1,0 +1,16 @@
+<launch>
+
+  <arg name="baud" default="57600" />
+  <arg name="port" default="/dev/ttyACM0" />
+
+  <node pkg="rosserial_python" name="arduino_control_velocity" type="serial_node.py" args="_port:=$(arg port) _baud:=$(arg baud)" output="screen">
+  
+    <param name="an" type="double" value="600"/>
+    <param name="kp" type="double" value="2"/>
+    <param name="ki" type="double" value="10"/>
+
+
+  </node>
+
+
+</launch>
